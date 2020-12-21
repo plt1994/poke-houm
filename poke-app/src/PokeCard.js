@@ -1,6 +1,8 @@
 import React from 'react'
-import { Badge, Table, Spinner, Card } from "react-bootstrap";
+import { Badge, Table, Card } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Loading from './Loading.js';
+
 
 export class PokeCard extends React.Component {
     constructor(props) {
@@ -38,9 +40,7 @@ export class PokeCard extends React.Component {
         if (this.state.isLoaded === false) {
             return (
                 <Card>
-                    <Spinner animation="border" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </Spinner>
+                    <Loading />
                 </Card>
             )
         }

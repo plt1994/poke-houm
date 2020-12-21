@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Main } from "./Main"
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 export class Buscar extends Component {
     constructor(props) {

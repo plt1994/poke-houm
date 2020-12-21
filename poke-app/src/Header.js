@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, NavDropdown, Form, Nav, FormControl, Button, Card, NavLink, Container } from "react-bootstrap";
+import { Navbar, NavDropdown, Form, Nav, FormControl, Button, Container } from "react-bootstrap";
 
 export class Header extends Component {
     constructor(props) {
@@ -32,11 +32,11 @@ export class Header extends Component {
         return (
             <Container >
                 <Navbar style={{ "background-color": "#ff5000" }} expand="lg" variant="dark">
-                    <Navbar.Brand href="#home">Poke-Front!</Navbar.Brand>
+                    <Navbar.Brand href="/home">Poke-Front!</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="/home">Home</Nav.Link>
                             <Nav.Link href="/home">Link</Nav.Link>
                             <NavDropdown title="Buscar por tipo" id="basic-nav-dropdown">
                                 {this.state.types.map(

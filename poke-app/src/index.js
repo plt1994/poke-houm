@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Spinner, Nav, NavItem, Button, Card, NavLink } from "react-bootstrap";
+
 import { Header } from "./Header.js"
 import { Main } from "./Main"
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Buscar from './Buscar.js';
+import Loading from './Loading.js';
 
 const api = "https://pokeapi.co/api/v2/";
 
@@ -38,11 +39,9 @@ class App extends React.Component {
     }
 
     render() {
-        if (this.state.isLoaded == false) {
+        if (this.state.isLoaded === false) {
             return (
-                <Spinner animation="grow" role="status">
-                    <span className="sr-only">Loading...</span>
-                </Spinner>
+                <Loading />
             )
         } else {
             return (
@@ -77,20 +76,11 @@ class App extends React.Component {
                                 />
                             </Switch>
                         </div>
-                        {/* <Header /> */}
-                        {/* <Nav fill variant="tabs" defaultActiveKey="/home">
-                            <NavItem>
-                                <NavLink href="/home" >
-                                    Menu
-                            </NavLink>
-
-                            </NavItem>
-                        </Nav> */}
-                        {/* <Main
-                            data={this.state}
-                        /> */}
+                        <Redirect exact from="/" to="/home" />
                     </BrowserRouter>
+
                 </div>
+
 
             );
         }
